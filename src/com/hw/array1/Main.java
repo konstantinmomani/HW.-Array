@@ -1,10 +1,15 @@
 package com.hw.array1;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        task1();
+
+        task123();
     }
-    public static void task1 () {
+
+    public static void task123() {
         System.out.println("Задача1");
+
     }
 }
