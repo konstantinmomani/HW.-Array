@@ -5,15 +5,21 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        task123();
+        task1234();
     }
 
-    public static void task123() {
+    public static void task1234() {
         System.out.println("Задача1");
-        int[] numbers = new int [3];
+        int[] numbers = new int[3];
         numbers[0] = 1;
         numbers[1] = 2;
         numbers[2] = 3;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                numbers[i] = numbers[i] + 1;
+            }
+        }
+        System.out.println(Arrays.toString(numbers));
         for (int i = 0; i < numbers.length; i++) {
             if (i < numbers.length - 1) {
                 System.out.print(numbers[i] + ", ");
@@ -63,13 +69,12 @@ public class Main {
                 System.out.print(namesOfMonth[i] + "\n");
             }
         }
-        for (int i = namesOfMonth.length - 1; i >=0; i--) {
+        for (int i = namesOfMonth.length - 1; i >= 0; i--) {
             if (i > 0) {
                 System.out.print(namesOfMonth[i] + ", ");
             } else {
                 System.out.println(namesOfMonth[i]);
             }
         }
-
     }
 }
