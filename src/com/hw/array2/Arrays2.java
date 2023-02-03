@@ -31,33 +31,21 @@ public class Arrays2 {
         System.out.println("Задача 2");
         int[] arr = generateRandomArray();
 //      Вариант с циклом for
-        int maxSpending = 0;
-        int minSpending = -1;
+        int maxSpending = arr[0];
+        int minSpending = arr[0];
         String text1 = "Максимальная сумма трат за день составила ";
         String text2 = " рублей";
         String text3 = "Минимальная сумма трат за день составила ";
         for (int i = 0; i < arr.length; i++) {
             final int current = arr[i];
-            if (current > maxSpending) {
-                maxSpending = current;
-            }
-        }
-        System.out.println(text1 + maxSpending + text2);
-//      Вариант с for each
-        for (final int current : arr) {
-            if (current > maxSpending) {
-                maxSpending = current;
-            }
-        }
-        System.out.println(text1 + maxSpending + text2);
-//      Вариант с циклом for
-        for (int i = 0; i < arr.length - 1; i++) {
-            final int current = arr[i];
-            final int next = arr[i + 1];
-            if (current < next) {
+            if (current < minSpending) {
                 minSpending = current;
             }
+            if (current > maxSpending) {
+                maxSpending = current;
+            }
         }
+        System.out.println(text1 + maxSpending + text2);
         System.out.println(text3 + minSpending + text2);
     }
 
@@ -67,8 +55,8 @@ public class Arrays2 {
         double amount = 0;
         String text1 = "Средняя сумма трат за месяц составила ";
         String text2 = " рублей";
-        for (int i = 0; i < arr.length; i++) {
-            amount += arr[i];
+        for (int i : arr) {
+            amount += i;
         }
         double averageAmount = amount / arr.length;
         System.out.println(text1 + averageAmount + text2);

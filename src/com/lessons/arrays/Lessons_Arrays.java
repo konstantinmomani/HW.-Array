@@ -58,22 +58,26 @@ public class Lessons_Arrays {
         for (int i = 0; i < rack.length - 1 && rack[i + 1] != 0; i++) {
             System.out.println(rack[i + 1] - rack[i]);
         }
-        int[] box = {200, 1000, 100, 59, 9, 3, 700};
-        int maxBox = -1;
-        int minBox = -1;
+        int[] box = {200, 10, 1000, 59, 3, 700, 1};
+        int maxBox = box[0];
+        int minBox = box[0];
         for (int i = 0; i < box.length; i++) {
+            if (box[i] < minBox) {
+                minBox = box[i];
+            }
             if (box[i] > maxBox) {
                 maxBox = box[i];
             }
         }
         System.out.println(maxBox);
-        for (int i = 0; i < box.length - 1; i++) {
+        System.out.println(minBox);
+        /*for (int i = 0; i < box.length - 1; i++) {
             final int current = box[i];
             final int next = box[i + 1];
             if (current < next) {
                 minBox = current;
             }
         }
-        System.out.println(minBox);
+        System.out.println(minBox);*/
     }
 }
