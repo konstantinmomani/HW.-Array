@@ -4,6 +4,7 @@ public class Arrays2 {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     public static int[] generateRandomArray() {
@@ -52,10 +53,24 @@ public class Arrays2 {
         for (int i = 0; i < arr.length - 1; i++) {
             final int current = arr[i];
             final int next = arr[i + 1];
-            if (current > next) {
-                minSpending = next;
+            if (current < next) {
+                minSpending = current;
             }
         }
         System.out.println(text3 + minSpending + text2);
     }
+
+    public static void task3() {
+        System.out.println("Задача 3");
+        int[] arr = generateRandomArray();
+        double amount = 0;
+        String text1 = "Средняя сумма трат за месяц составила ";
+        String text2 = " рублей";
+        for (int i = 0; i < arr.length; i++) {
+            amount += arr[i];
+        }
+        double averageAmount = amount / arr.length;
+        System.out.println(text1 + averageAmount + text2);
+    }
+
 }
